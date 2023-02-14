@@ -1,0 +1,203 @@
+body {
+  color: #333;
+}
+
+main {
+  padding: 20px 10px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+a {
+  color: inherit;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.post {
+  display: flex;
+  gap: 20px;
+}
+
+.post img {
+  max-width: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.post .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post .info h2 {
+  margin-bottom: 5px;
+  font-size: 1.7rem;
+}
+
+.post .info .date {
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-size: .85rem;
+  color: #888;
+  font-weight: bold;
+}
+
+.post .date .author {
+  margin-right: 10px;
+  color: #333;
+}
+
+.post .info .desc {
+  line-height: 1.5rem;
+}
+
+@media (max-width: 600px) {
+
+  .posts {
+    gap: 40px;
+  }
+
+  .post {
+    flex-direction: column;
+  }
+
+  .post img {
+    max-width: 100%;
+    max-height: 400px;
+  }
+
+  .post .info .date {
+    margin-bottom: 15px;
+  }
+}
+
+.login, .register {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form h1 {
+  margin-bottom: 15px;
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  padding: 7px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #555555a6;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.post-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin: 10px 0 5px;
+}
+
+.post-page .image {
+  max-height: 400px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.post-page img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.post-page a {
+  color: #333;
+  text-decoration: none;
+}
+
+.post-page time {
+  text-align: center;
+  display: block;
+  font-size: 0.7rem;
+  color: #aaa;
+}
+
+.post-page .author {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.post-page .content p {
+  line-height: 1.6rem;
+}
+
+.edit-row {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.post-page .edit-btn {
+  display: inline-flex;
+  background-color: #333;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.updateImgBtn, .uploadImgBtn {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #333;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edit-btn {
+  font-size: 18px;
+}
