@@ -71,8 +71,7 @@ const EditPost = () => {
             setTitle(res.data.title);
             setSummary(res.data.summary);
             setContent(res.data.content);
-            setImgPost(res.data.img
-                ?.split("\\")[1]);
+            setImgPost(res.data.img);
         };
         getPost();
     }, [id]);
@@ -140,7 +139,7 @@ const EditPost = () => {
                 cursor: "pointer",
               }}
               onClick={(e) => imgRef.current.click()}
-              src={`https://fullstack-blog-app.onrender.com/uploads/${imgPost}`}
+              src={`https://fullstack-blog-app.onrender.com/${imgPost}`}
               alt=""
             />
           )}
