@@ -12,7 +12,10 @@ const Register = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post("http://localhost:8800/api/auth/register", {username, password});
+            const res = await axios.post(
+              "https://fullstack-blog-app.onrender.com/api/auth/register",
+              { username, password }
+            );
             console.log(first)
         } catch (error) {
             console.log(error);

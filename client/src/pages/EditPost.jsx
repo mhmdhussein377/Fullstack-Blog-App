@@ -65,7 +65,9 @@ const EditPost = () => {
 
     useEffect(() => {
         const getPost = async() => {
-            const res = await axios.get(`http://localhost:8800/api/posts/${id}`);
+            const res = await axios.get(
+              `https://fullstack-blog-app.onrender.com/api/posts/${id}`
+            );
             setTitle(res.data.title);
             setSummary(res.data.summary);
             setContent(res.data.content);
@@ -90,37 +92,61 @@ const EditPost = () => {
             data.set("file", img);
         }
 
-        await axios.put(`http://localhost:8800/api/posts/edit/${id}`, data);
+        await axios.put(
+          `https://fullstack-blog-app.onrender.com/api/posts/edit/${id}`,
+          data
+        );
         navigate(`/post/${id}`);
     }
 
     return (
-        <form onSubmit={editPost}>
-            <h1>Edit Post</h1>
-            <input
-                className='edit-btn'
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                type="text"
-                placeholder="Title"/>
-            <input
-                className='edit-btn'
-                value={summary}
-                onChange={(e) => setSummary(e.target.value)}
-                type="text"
-                placeholder="Summary"/>
-            <input ref={imgRef} style={{display: "none"}} type="file" onChange={(e) => setImg(e.target.files[0])}/>
-            <div style={{cursor: "pointer"}} onClick={e => imgRef.current.click()} className="updateImgBtn">Update Image</div>
-            <div className="image">
-                {imgPost && <img style={{cursor: "pointer"}} onClick={e => imgRef.current.click()} src={`http://localhost:8800/uploads/${imgPost}`} alt=""/>}
-            </div>
-            <ReactQuill
-                value={content}
-                onChange={setContent}
-                modules={modules}
-                formats={formats}/>
-            <button>Edit Post</button>
-        </form>
+      <form onSubmit={editPost}>
+        <h1>Edit Post</h1>
+        <input
+          className="edit-btn"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          type="text"
+          placeholder="Title"
+        />
+        <input
+          className="edit-btn"
+          value={summary}
+          onChange={(e) => setSummary(e.target.value)}
+          type="text"
+          placeholder="Summary"
+        />
+        <input
+          ref={imgRef}
+          style={{ display: "none" }}
+          type="file"
+          onChange={(e) => setImg(e.target.files[0])}
+        />
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={(e) => imgRef.current.click()}
+          className="updateImgBtn"
+        >
+          Update Image
+        </div>
+        <div className="image">
+          {imgPost && (
+            <img
+              style={{ cursor: "pointer" }}
+              onClick={(e) => imgRef.current.click()}
+              src={`https://fullstack-blog-app.onrender.com/uploads/${imgPost}`}
+              alt=""
+            />
+          )}
+        </div>
+        <ReactQuill
+          value={content}
+          onChange={setContent}
+          modules={modules}
+          formats={formats}
+        />
+        <button>Edit Post</button>
+      </form>
     );
 }
 

@@ -75,7 +75,7 @@ const CreatePost = () => {
             console.log(key, value);
         });
 
-        const res = await axios.post("http://localhost:8800/api/posts/create", data);
+        const res = await axios.post("https://fullstack-blog-app.onrender.com/api/posts/create", data);
         res.data && navigate("/");
     }
 
@@ -92,8 +92,18 @@ const CreatePost = () => {
                 onChange={(e) => setSummary(e.target.value)}
                 type="text"
                 placeholder="Summary"/>
-            <input ref={imgRef} style={{display: "none"}} type="file" onChange={(e) => setImg(e.target.files[0])}/>
-            <div onClick={e => imgRef.current.click()} className="uploadImgBtn">Upload an image</div>
+            <input
+                ref={imgRef}
+                style={{
+                display: "none"
+            }}
+                type="file"
+                onChange={(e) => setImg(e.target.files[0])}/>
+            <div
+                onClick={e => imgRef
+                .current
+                .click()}
+                className="uploadImgBtn">Upload an image</div>
             <ReactQuill
                 value={content}
                 onChange={setContent}
