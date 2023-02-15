@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://melodious-lolly-505f50.netlify.app/",
+      "https://melodious-lolly-505f50.netlify.app",
     ],
   })
 );
