@@ -10,13 +10,11 @@ const Post = ({
     author
 }) => {
 
-    const image = img.split(`\\`)[1];
-
     return (
       <div className="post">
         <Link to={`/post/${_id}`}>
           <img
-            src={`https://fullstack-blog-app.onrender.com/uploads/${image}`}
+            src={`https://fullstack-blog-app.onrender.com/${img}`}
             alt=""
           />
         </Link>
