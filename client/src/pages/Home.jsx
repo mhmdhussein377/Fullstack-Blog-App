@@ -9,7 +9,7 @@ const Home = () => {
     useEffect(() => {
         const getPosts = async () => {
             const res = await axios.get(
-              "https://fullstack-blog-app.onrender.com/api/posts"
+              "http://localhost:8800/api/posts"
             );
             setPosts(res.data);
         }
