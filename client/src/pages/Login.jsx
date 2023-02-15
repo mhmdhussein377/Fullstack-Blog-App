@@ -18,7 +18,10 @@ const Login = () => {
 
         try {
             dispatch(LoginStart());
-            const res = await axios.post("http://localhost:8800/api/auth/login", {username, password});
+            const res = await axios.post(
+              "https://fullstack-blog-app.onrender.com//api/auth/login",
+              { username, password }
+            );
             console.log(res.data);
             dispatch(LoginSuccess(res.data));
             navigate("/");

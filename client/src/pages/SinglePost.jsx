@@ -14,7 +14,9 @@ const SinglePost = () => {
 
     useEffect(() => {
         const getPost = async() => {
-            const res = await axios.get(`http://localhost:8800/api/posts/${id}`);
+            const res = await axios.get(
+              `https://fullstack-blog-app.onrender.com//api/posts/${id}`
+            );
             setData(res.data);
         }
         getPost();

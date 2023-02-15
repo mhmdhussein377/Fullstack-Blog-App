@@ -8,7 +8,9 @@ const Home = () => {
 
     useEffect(() => {
         const getPosts = async () => {
-            const res = await axios.get("http://localhost:8800/api/posts");
+            const res = await axios.get(
+              "https://fullstack-blog-app.onrender.com//api/posts"
+            );
             setPosts(res.data);
         }
         getPosts();
