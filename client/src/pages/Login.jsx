@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, {useContext, useState} from 'react'
 import {useNavigate} from "react-router-dom";
-import { LoginFailure, LoginStart, LoginSuccess } from '../context/UserContext/userActions';
-import { userContext } from '../context/UserContext/userContext';
+import {LoginFailure, LoginStart, LoginSuccess} from '../context/UserContext/userActions';
+import {userContext} from '../context/UserContext/userContext';
 
 const Login = () => {
 
@@ -18,10 +18,7 @@ const Login = () => {
 
         try {
             dispatch(LoginStart());
-            const res = await axios.post(
-              "https://fullstack-blog-app.onrender.com/api/auth/login",
-              { username, password }
-            );
+            const res = await axios.post("http://localhost:8800/api/auth/login", {username, password});
             console.log(res.data);
             dispatch(LoginSuccess(res.data));
             navigate("/");
@@ -42,9 +39,12 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
-                placeholder="Password"/>
-            {error && <p style={{color: "red"}}>Wrong username or password</p>}
-            {isFetching ? <button>Loading</button> : <button>Login</button>}
+                placeholder="Password"/> {error && <p style={{
+                color: "red"
+            }}>Wrong username or password</p>}
+            {isFetching
+                ? <button>Loading</button>
+                : <button>Login</button>}
         </form>
     );
 }

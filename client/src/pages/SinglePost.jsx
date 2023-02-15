@@ -14,9 +14,7 @@ const SinglePost = () => {
 
     useEffect(() => {
         const getPost = async() => {
-            const res = await axios.get(
-              `https://fullstack-blog-app.onrender.com/api/posts/${id}`
-            );
+            const res = await axios.get(`http://localhost:8800/api/posts/${id}`);
             setData(res.data);
         }
         getPost();
@@ -27,44 +25,47 @@ const SinglePost = () => {
 
     console.log(data)
 
-    return !data ? (
-      <div>No Content</div>
-    ) : (
-      <div className="post-page">
-        <h1>{data.title}</h1>
-        {data?.createdAt && (
-          <time>
-            {formatISO9075(new Date(data?.createdAt), "MMM d, yyyy HH:mm")}
-          </time>
-        )}
-        {data?.author?.username && (
-          <div className="author">by @{data?.author.username}</div>
-        )}
-        {user._id === data?.author?._id && (
-          <Link to={`/edit/${data._id}`}>
-            <div className="edit-row">
-              <a className="edit-btn" href="#">
-                <AiOutlineEdit size={20} className="edit-icon" />
-                Edit this post
-              </a>
+    return !data
+        ? (
+            <div>No Content</div>
+        )
+        : (
+            <div className="post-page">
+                <h1>{data.title}</h1>
+                {data
+                    ?.createdAt && (
+                        <time>
+                            {formatISO9075(new Date(data
+                                ?.createdAt), "MMM d, yyyy HH:mm")}
+                        </time>
+                    )}
+                {data
+                    ?.author
+                        ?.username && (
+                            <div className="author">by @{data
+                                    ?.author.username}</div>
+                        )}
+                {user._id === data
+                    ?.author
+                        ?._id && (
+                            <Link to={`/edit/${data._id}`}>
+                                <div className="edit-row">
+                                    <a className="edit-btn" href="#">
+                                        <AiOutlineEdit size={20} className="edit-icon"/>
+                                        Edit this post
+                                    </a>
+                                </div>
+                            </Link>
+                        )}
+                <div className="image">
+                    {img && (<img src={`https://fullstack-blog-app.onrender.com/uploads/${img}`} alt=""/>)}
+                </div>
+                <div
+                    dangerouslySetInnerHTML={{
+                    __html: data.content
+                }}/>
             </div>
-          </Link>
-        )}
-        <div className="image">
-          {img && (
-            <img
-              src={`https://fullstack-blog-app.onrender.com/uploads/${img}`}
-              alt=""
-            />
-          )}
-        </div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: data.content,
-          }}
-        />
-      </div>
-    );
+        );
 }
 
 export default SinglePost

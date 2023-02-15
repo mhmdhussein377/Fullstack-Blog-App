@@ -75,7 +75,10 @@ const CreatePost = () => {
             console.log(key, value);
         });
 
-        const res = await axios.post("https://fullstack-blog-app.onrender.com/api/posts/create", data);
+        const res = await axios.post(
+          "http://localhost:8800/api/posts/create",
+          data
+        );
         res.data && navigate("/");
     }
 
