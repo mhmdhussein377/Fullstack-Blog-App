@@ -8,7 +8,7 @@ const PostRouter = require("./routes/Posts.js")
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: ["http://localhost:5173", "https://fullstack-blog-app.onrender.com", "https://melodious-lolly-505f50.netlify.app/"]
+    origin: ["http://localhost:5173", "https://fullstack-blog-app.onrender.com", "https://melodious-lolly-505f50.netlify.app/", "http://localhost:8800"]
 }));
 dotenv.config();
 app.use("/uploads", express.static(__dirname + "/uploads"));
