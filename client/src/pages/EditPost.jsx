@@ -66,7 +66,7 @@ const EditPost = () => {
     useEffect(() => {
         const getPost = async() => {
             const res = await axios.get(
-              `https://fullstack-blog-app.onrender.com//api/posts/${id}`
+              `https://fullstack-blog-app.onrender.com/api/posts/${id}`
             );
             setTitle(res.data.title);
             setSummary(res.data.summary);
@@ -93,7 +93,7 @@ const EditPost = () => {
         }
 
         await axios.put(
-          `https://fullstack-blog-app.onrender.com//api/posts/edit/${id}`,
+          `https://fullstack-blog-app.onrender.com/api/posts/edit/${id}`,
           data
         );
         navigate(`/post/${id}`);
@@ -140,7 +140,7 @@ const EditPost = () => {
                 cursor: "pointer",
               }}
               onClick={(e) => imgRef.current.click()}
-              src={`https://fullstack-blog-app.onrender.com//uploads/${imgPost}`}
+              src={`https://fullstack-blog-app.onrender.com/uploads/${imgPost}`}
               alt=""
             />
           )}

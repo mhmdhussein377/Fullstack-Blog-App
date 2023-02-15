@@ -13,7 +13,7 @@ const Register = () => {
 
         try {
             const res = await axios.post(
-              "https://fullstack-blog-app.onrender.com//api/auth/register",
+              "https://fullstack-blog-app.onrender.com/api/auth/register",
               { username, password }
             );
             console.log(first)

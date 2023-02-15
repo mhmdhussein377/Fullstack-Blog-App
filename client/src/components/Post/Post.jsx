@@ -16,7 +16,7 @@ const Post = ({
       <div className="post">
         <Link to={`/post/${_id}`}>
           <img
-            src={`https://fullstack-blog-app.onrender.com//uploads/${image}`}
+            src={`https://fullstack-blog-app.onrender.com/uploads/${image}`}
             alt=""
           />
         </Link>

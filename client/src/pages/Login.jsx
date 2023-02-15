@@ -19,7 +19,7 @@ const Login = () => {
         try {
             dispatch(LoginStart());
             const res = await axios.post(
-              "https://fullstack-blog-app.onrender.com//api/auth/login",
+              "https://fullstack-blog-app.onrender.com/api/auth/login",
               { username, password }
             );
             console.log(res.data);

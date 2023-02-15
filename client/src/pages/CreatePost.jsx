@@ -76,7 +76,7 @@ const CreatePost = () => {
         });
 
         const res = await axios.post(
-          "https://fullstack-blog-app.onrender.com//api/posts/create",
+          "https://fullstack-blog-app.onrender.com/api/posts/create",
           data
         );
         res.data && navigate("/");
